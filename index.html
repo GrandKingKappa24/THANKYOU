@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -559,3 +560,566 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ✨</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+</head><body>
+<!-- Fixed music control panel -->
+<div class="music-control-panel">
+    <div class="music-nav-buttons">
+        <button id="prevBtn" class="nav-music-btn" onclick="previousSong()" title="Previous Song">⏮️</button>
+        <button id="globalPlayStopBtn" class="global-music-btn" onclick="toggleGlobalMusic()">
+            <span id="musicIcon">🎵</span>
+            <span id="musicText">Play Music</span>
+        </button>
+        <button id="nextBtn" class="nav-music-btn" onclick="nextSong()" title="Next Song">⏭️</button>
+    </div>
+    <div class="music-progress-container">
+        <div class="current-song-info">
+            <span id="currentSongTitle">No song playing</span>
+        </div>
+        <div class="progress-bar-container">
+            <span class="time-display" id="currentTime">0:00</span>
+            <div class="progress-bar" id="progressBar" onclick="seekToPosition(event)">
+                <div class="progress-fill" id="progressFill"></div>
+                <div class="progress-handle" id="progressHandle"></div>
+            </div>
+            <span class="time-display" id="totalTime">0:00</span>
+        </div>
+    </div>
+</div>
+
+<!-- Floating particles background -->
+<div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+</div>
+
+<div class="container">
+    <div class="photo-container">
+        <!-- Main photo placeholder -->    
+        <img src="assets/img/main-photo.jpg" alt="Our Photo" class="photo">
+
+    </div>
+
+    <h1>For You</h1>
+
+    <p class="message">
+        I made this small page because even though things are changing between us,  
+        I want you to know what these 10 years meant to me.  
+        You've been part of my life in a way I'll never forget,  
+        and I hope this little surprise brings a smile to your day.
+    </p>
+
+    <div class="button-group">
+        <button class="surprise-btn" onclick="showSurprise()">
+            ✨ Click for a surprise ✨
+        </button>
+        
+        <button class="memory-btn" onclick="showMemories()">
+            📸 Share a memory
+        </button>
+        
+        <button class="wish-btn" onclick="showWishes()">
+            🌟 Make a wish
+        </button>
+    </div>
+
+    <div class="button-group secondary">
+        <button class="gratitude-btn" onclick="showGratitude()">
+            🙏 Express gratitude
+        </button>
+        
+        <button class="journey-btn" onclick="showJourney()">
+            🗺️ Our journey
+        </button>
+        
+        <button class="future-btn" onclick="showFuture()">
+            🚀 Future hopes
+        </button>
+
+        <button class="playlist-btn" onclick="showPlaylist()">
+            🎵 Memory playlist
+        </button>
+    </div>
+
+    <div id="surpriseMessage" class="hidden-message">
+        <button class="close-btn" onclick="closeAllMessages()">✕</button>
+        💫 No matter what happens, you will always have a special place in my story. 💫
+    </div>
+
+    <div id="memoryMessage" class="hidden-message">
+        <button class="close-btn" onclick="closeAllMessages()">✕</button>
+        <div class="memory-photos">
+
+            <img src="assets/img/memory1.jpg" alt="Birthday" class="photo small-photo">
+            <img src="assets/img/memory2.jpg" alt="Theater" class="photo small-photo">
+            <img src="assets/img/memory3.jpg" alt="Sunrise" class="photo small-photo">
+            <img src="assets/img/memory4.jpg" alt="Festival" class="photo small-photo">
+            <img src="assets/img/memory5.jpg" alt="Beach" class="photo small-photo">
+            <img src="assets/img/memory6.jpg" alt="Art" class="photo small-photo">
+
+        </div>
+        <div class="memory-stories">
+            <div class="story-item">
+                <h4>🎂 Birthday Celebrations</h4>
+                <p>Remember those amazing birthday parties? The laughter, the cake fights, and the unforgettable moments we created together!</p>
+            </div>
+            <div class="story-item">
+                <h4>🌃 Late Night Adventures</h4>
+                <p>Those spontaneous midnight drives, deep conversations under the stars, and the feeling that time stood still when we were together.</p>
+            </div>
+            <div class="story-item">
+                <h4>📱 Inside Jokes</h4>
+                <p>All those silly memes, random references that only we understood, and the way we could make each other laugh with just a look!</p>
+            </div>
+        </div>
+        <p class="memory-text">
+            🎈 Remember all those laughs we shared? The late-night conversations, 
+            the inside jokes, the adventures we went on... Each moment was a treasure. 
+            Thank you for being such an important part of my journey! 🌈
+        </p>
+    </div>
+
+    <div id="gratitudeMessage" class="hidden-message">
+        <button class="close-btn" onclick="closeAllMessages()">✕</button>
+        <div class="gratitude-grid">
+            <div class="gratitude-item">
+                <span class="gratitude-icon">🌟</span>
+                <h4>For Your Kindness</h4>
+                <p>Your gentle heart and caring nature have touched so many lives, including mine.</p>
+            </div>
+            <div class="gratitude-item">
+                <span class="gratitude-icon">🌈</span>
+                <h4>For Your Support</h4>
+                <p>Through ups and downs, you've been a constant source of encouragement and strength.</p>
+            </div>
+            <div class="gratitude-item">
+                <span class="gratitude-icon">✨</span>
+                <h4>For Being You</h4>
+                <p>Your authenticity and unique spirit make the world a brighter, more beautiful place.</p>
+            </div>
+            <div class="gratitude-item">
+                <span class="gratitude-icon">🎭</span>
+                <h4>For The Laughter</h4>
+                <p>Your sense of humor and ability to find joy in small things is absolutely contagious!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="journeyMessage" class="hidden-message">
+        <button class="close-btn" onclick="closeAllMessages()">✕</button>
+        <div class="journey-intro">
+            <h3>🗺️ Our Amazing Journey Together</h3>
+            <p>A decade of friendship, growth, and unforgettable moments...</p>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot">🌱</div>
+                <div class="timeline-content">
+                    <h4>The Beginning - First Meeting</h4>
+                    <div class="timeline-image">
+                        <img src="assets/img/journey1.jpg" alt="First Meeting" class="journey-photo">
+                    </div>
+                    <p>When we first met, little did we know how much our lives would intertwine and how deep our friendship would grow. That first conversation, that first laugh - it was the start of something beautiful.</p>
+                    <div class="timeline-details">
+                        <span class="detail-tag">💫 First Impressions</span>
+                        <span class="detail-tag">🤝 Instant Connection</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot">🌸</div>
+                <div class="timeline-content">
+                    <h4>Growing Closer - Building Trust</h4>
+                    <div class="timeline-image">
+                        <div class="photo-placeholder journey-photo">☕</div>
+                        <!-- Uncomment and replace with your actual image:
+                        <img src="assets/img/journey2-growing-closer.jpg" alt="Growing Closer" class="journey-photo">
+                        -->
+                    </div>
+                    <p>Those early days of sharing stories, discovering common interests, and slowly opening up. Late-night conversations that went on for hours, finding comfort in each other's company.</p>
+                    <div class="timeline-details">
+                        <span class="detail-tag">📱 Endless Texts</span>
+                        <span class="detail-tag">☕ Coffee Dates</span>
+                        <span class="detail-tag">🎬 Movie Nights</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot">🌈</div>
+                <div class="timeline-content">
+                    <h4>Adventures Begin - Making Memories</h4>
+                    <div class="timeline-image">
+                        <div class="photo-placeholder journey-photo">🚗</div>
+                        <!-- Uncomment and replace with your actual image:
+                        <img src="assets/img/journey3-adventures.jpg" alt="Adventures Begin" class="journey-photo">
+                        -->
+                    </div>
+                    <p>Our first real adventures together! Road trips, spontaneous plans, trying new things. Learning each other's quirks, inside jokes being born, and creating memories that would last forever.</p>
+                    <div class="timeline-details">
+                        <span class="detail-tag">🚗 Road Trips</span>
+                        <span class="detail-tag">📸 Photo Albums</span>
+                        <span class="detail-tag">🎪 New Experiences</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot">🔥</div>
+                <div class="timeline-content">
+                    <h4>Deep Connection - Soul Friends</h4>
+                    <div class="timeline-image">
+                        <div class="photo-placeholder journey-photo">🤗</div>
+                        <!-- Uncomment and replace with your actual image:
+                        <img src="assets/img/journey4-deep-connection.jpg" alt="Deep Connection" class="journey-photo">
+                        -->
+                    </div>
+                    <p>When friendship turned into something deeper - not romantic, but soul-deep. Being there for each other through thick and thin, understanding without words, and becoming each other's safe space.</p>
+                    <div class="timeline-details">
+                        <span class="detail-tag">💝 Trust & Loyalty</span>
+                        <span class="detail-tag">🫂 Emotional Support</span>
+                        <span class="detail-tag">🎭 Shared Secrets</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot">⚡</div>
+                <div class="timeline-content">
+                    <h4>Challenges & Growth - Testing Times</h4>
+                    <div class="timeline-image">
+                        <div class="photo-placeholder journey-photo">💪</div>
+                        <!-- Uncomment and replace with your actual image:
+                        <img src="assets/img/journey5-challenges.jpg" alt="Challenges & Growth" class="journey-photo">
+                        -->
+                    </div>
+                    <p>Every friendship faces tests. Disagreements, misunderstandings, life pulling us in different directions. But we learned, we grew, we forgave, and we came back stronger than ever.</p>
+                    <div class="timeline-details">
+                        <span class="detail-tag">💪 Resilience</span>
+                        <span class="detail-tag">🌱 Personal Growth</span>
+                        <span class="detail-tag">🤝 Forgiveness</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot">🌳</div>
+                <div class="timeline-content">
+                    <h4>Weathering Storms - Unbreakable Bond</h4>
+                    <div class="timeline-image">
+                        <div class="photo-placeholder journey-photo">🌈</div>
+                        <!-- Uncomment and replace with your actual image:
+                        <img src="assets/img/journey6-storms.jpg" alt="Weathering Storms" class="journey-photo">
+                        -->
+                    </div>
+                    <p>Through life's biggest challenges, we stood together. Family issues, career stress, heartbreaks, and victories - sharing it all. Our bond proved unbreakable, growing even deeper through adversity.</p>
+                    <div class="timeline-details">
+                        <span class="detail-tag">🏠 Family Support</span>
+                        <span class="detail-tag">💼 Career Guidance</span>
+                        <span class="detail-tag">💔 Healing Together</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot">🎨</div>
+                <div class="timeline-content">
+                    <h4>Creative Collaborations - Dream Builders</h4>
+                    <div class="timeline-image">
+                        <div class="photo-placeholder journey-photo">🎯</div>
+                        <!-- Uncomment and replace with your actual image:
+                        <img src="assets/img/journey7-creative.jpg" alt="Creative Collaborations" class="journey-photo">
+                        -->
+                    </div>
+                    <p>Working on projects together, supporting each other's dreams, and celebrating achievements. Whether big or small, we were each other's biggest cheerleaders and creative partners.</p>
+                    <div class="timeline-details">
+                        <span class="detail-tag">💡 Brainstorming</span>
+                        <span class="detail-tag">🎯 Goal Setting</span>
+                        <span class="detail-tag">🏆 Celebrations</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot">✨</div>
+                <div class="timeline-content">
+                    <h4>Golden Moments - Peak Friendship</h4>
+                    <div class="timeline-image">
+                        <div class="photo-placeholder journey-photo">🌟</div>
+                        <!-- Uncomment and replace with your actual image:
+                        <img src="assets/img/journey8-golden.jpg" alt="Golden Moments" class="journey-photo">
+                        -->
+                    </div>
+                    <p>Those perfect moments when everything clicked. Belly laughs that hurt, adventures that felt like movies, and the comfortable silences that spoke volumes. The golden age of our friendship.</p>
+                    <div class="timeline-details">
+                        <span class="detail-tag">😂 Uncontrollable Laughter</span>
+                        <span class="detail-tag">🌟 Perfect Days</span>
+                        <span class="detail-tag">💞 Pure Joy</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot">🦋</div>
+                <div class="timeline-content">
+                    <h4>Evolution & Change - Growing Apart, Growing Up</h4>
+                    <div class="timeline-image">
+                        <div class="photo-placeholder journey-photo">📈</div>
+                        <!-- Uncomment and replace with your actual image:
+                        <img src="assets/img/journey9-evolution.jpg" alt="Evolution & Change" class="journey-photo">
+                        -->
+                    </div>
+                    <p>As life evolved, so did we. New responsibilities, different paths, changing priorities. The frequency of contact might have changed, but the depth of care remained constant.</p>
+                    <div class="timeline-details">
+                        <span class="detail-tag">📈 Career Focus</span>
+                        <span class="detail-tag">👥 New Relationships</span>
+                        <span class="detail-tag">🏡 Life Changes</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot">🌅</div>
+                <div class="timeline-content">
+                    <h4>New Horizons - Grateful Transition</h4>
+                    <div class="timeline-image">
+                        <div class="photo-placeholder journey-photo">🙏</div>
+                        <!-- Uncomment and replace with your actual image:
+                        <img src="assets/img/journey10-new-horizons.jpg" alt="New Horizons" class="journey-photo">
+                        -->
+                    </div>
+                    <p>As paths diverge and new chapters begin, we carry forward all the beautiful memories, lessons learned, and love shared. The foundation we built remains strong, carrying beautiful memories forward into whatever comes next.</p>
+                    <div class="timeline-details">
+                        <span class="detail-tag">🙏 Gratitude</span>
+                        <span class="detail-tag">📚 Life Lessons</span>
+                        <span class="detail-tag">💝 Eternal Bond</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="journey-stats">
+            <h4>📊 Our Journey in Numbers</h4>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Amazing Years</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Precious Memories</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Shared Laughs</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Genuine Care</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="journey-reflection">
+            <h4>💭 Looking Back With Love</h4>
+            <p>Every chapter of our journey has been a gift. From those first nervous hellos to the comfortable silences, from the biggest adventures to the quietest moments of understanding - it's all been part of something truly special. Thank you for being such an incredible part of my story. 🌟</p>
+        </div>
+    </div>
+
+    <div id="futureMessage" class="hidden-message">
+        <button class="close-btn" onclick="closeAllMessages()">✕</button>
+        <div class="future-wishes">
+            <h3>🚀 My Wishes for Your Future</h3>
+            <div class="wish-list">
+                <div class="wish-item">💫 May every dream you chase become reality</div>
+                <div class="wish-item">🌟 May you find joy in every new adventure</div>
+                <div class="wish-item">🎯 May your goals be achieved with grace and determination</div>
+                <div class="wish-item">💖 May love and happiness follow you wherever you go</div>
+                <div class="wish-item">🌈 May you always remember how amazing you are</div>
+                <div class="wish-item">✨ May your light continue to shine bright and inspire others</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="playlistMessage" class="hidden-message">
+        <button class="close-btn" onclick="closeAllMessages()">✕</button>
+        <div class="playlist-container">
+            <h3>🎵 Songs That Remind Me of Us</h3>
+            <div class="music-controls">
+                <button id="stopAllMusic" onclick="stopAllMusic()">⏹️ Stop All</button>
+                <div class="volume-control">
+                    <label>🔊</label>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="50" onchange="setVolume(this.value)">
+                </div>
+            </div>
+            <div class="song-list">
+                <div class="song-item" onclick="playSong(1)" data-playing="false">
+                    <span class="song-icon">🎶</span>
+                    <div class="song-info">
+                        <p class="song-title">"Malay Ko"</p>
+                        <p class="song-description">For the regret, longing and hoping for a chance in love.</p>
+                    </div>
+                    <div class="play-status">▶️</div>
+                </div>
+                <div class="song-item" onclick="playSong(2)" data-playing="false">
+                    <span class="song-icon">🎵</span>
+                    <div class="song-info">
+                        <p class="song-title">"Burnout"</p>
+                        <p class="song-description">For the love that slowly faded as we both changed, without even noticing when the distance began. And for the long love I carried, and still carry, even when you can no longer feel it.</p>
+                    </div>
+                    <div class="play-status">▶️</div>
+                </div>
+                <div class="song-item" onclick="playSong(3)" data-playing="false">
+                    <span class="song-icon">🎼
+                    <div class="song-info">
+                        <p class="song-title">"Hirap Kalimutan"</p>
+                        <p class="song-description">Because ang hirap mo Kalimutan</p>
+                    </div>
+                    <div class="play-status">▶️</div>
+                </div>
+                <div class="song-item" onclick="playSong(4)" data-playing="false">
+                    <span class="song-icon">🎤</span>
+                    <div class="song-info">
+                        <p class="song-title">"Shot Puno"</p>
+                        <p class="song-description">
+                        because why not, Sa karagatan ng mga tao ikaw ang nakikita ko
+                        Sa mga labing aking nahalikan hanap ko ang sa 'yo
+                        Kapaligiran ay sobrang ingay at boses mo ang siyang lunas
+                        Sa sobrang daming hita na aking nakikita hanap ko ang maong mong butas</p>
+                    </div>
+                    <div class="play-status">▶️</div>
+                </div>
+                <div class="song-item" onclick="playSong(5)" data-playing="false">
+                    <span class="song-icon">🎸</span>
+                    <div class="song-info">
+                        <p class="song-title">"Ikaw At Ako"</p>
+                        <p class="song-description">Hope for Future</p>
+                    </div>
+                    <div class="play-status">▶️</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="wishMessage" class="hidden-message">
+        <button class="close-btn" onclick="closeAllMessages()">✕</button>
+        <div class="wish-container">
+            <div class="shooting-star">⭐</div>
+            <p class="wish-text">
+                🌠 I wish you nothing but happiness, success, and all the beautiful moments 
+                life has to offer. May every day bring you joy and every dream you have come true. 
+                You deserve all the wonderful things in this world! ✨
+            </p>
+        </div>
+    </div>
+
+    <div class="interactive-section">
+        <h2>Special Messages 💌</h2>
+        <div class="message-cards">
+            <div class="message-card" onclick="revealCard(1)">
+                <div class="card-front">
+                    <span class="card-icon">💝</span>
+                    <p>Gratitude</p>
+                </div>
+                <div class="card-back" id="card1">
+                    Thank you for being you - authentic, caring, and amazing. 
+                    Your friendship has meant the world to me! 🙏
+                </div>
+            </div>
+            
+            <div class="message-card" onclick="revealCard(2)">
+                <div class="card-front">
+                    <span class="card-icon">🌟</span>
+                    <p>Appreciation</p>
+                </div>
+                <div class="card-back" id="card2">
+                    I appreciate every moment we've shared, every laugh, 
+                    every conversation that made life brighter! ☀️
+                </div>
+            </div>
+            
+            <div class="message-card" onclick="revealCard(3)">
+                <div class="card-front">
+                    <span class="card-icon">🦋</span>
+                    <p>Growth</p>
+                </div>
+                <div class="card-back" id="card3">
+                    You've helped me grow in ways I never imagined. 
+                    Thank you for being part of my story! 🌱
+                </div>
+            </div>
+
+            <div class="message-card" onclick="revealCard(4)">
+                <div class="card-front">
+                    <span class="card-icon">🌈</span>
+                    <p>Joy</p>
+                </div>
+                <div class="card-back" id="card4">
+                    Your smile and laughter have been the sunshine 
+                    on my cloudy days. Pure joy! 🌞
+                </div>
+            </div>
+
+            <div class="message-card" onclick="revealCard(5)">
+                <div class="card-front">
+                    <span class="card-icon">💫</span>
+                    <p>Inspiration</p>
+                </div>
+                <div class="card-back" id="card5">
+                    Your strength, kindness, and unique perspective 
+                    have inspired me to be better! ✨
+                </div>
+            </div>
+
+            <div class="message-card" onclick="revealCard(6)">
+                <div class="card-front">
+                    <span class="card-icon">🎭</span>
+                    <p>Memories</p>
+                </div>
+                <div class="card-back" id="card6">
+                    From silly moments to deep talks, every memory 
+                    with you is precious and unforgettable! 🎪
+                </div>
+            </div>
+        </div>
+
+        <div class="bonus-section">
+            <h3>🎁 Hidden Treasures</h3>
+            <div class="treasure-hunt">
+                <button class="treasure-btn" onclick="findTreasure(1)">🗝️ Secret Message</button>
+                <button class="treasure-btn" onclick="findTreasure(2)">💎 Special Quote</button>
+                <button class="treasure-btn" onclick="findTreasure(3)">🎨 Digital Hug</button>
+                <button class="treasure-btn" onclick="findTreasure(4)">🌟 Surprise Fact</button>
+            </div>
+            <div id="treasureDisplay" class="treasure-display"></div>
+        </div>
+    </div>
+
+    <div class="hearts">
+        <span class="heart" onclick="heartClick(this)">💖</span>
+        <span class="heart" onclick="heartClick(this)">💝</span>
+        <span class="heart" onclick="heartClick(this)">💖</span>
+    </div>
+</div>
+
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
+>>>>>>> 952c6fbc9b1fbdf248f8f4fdf70a90ad87a55e10
